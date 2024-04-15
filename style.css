@@ -48,6 +48,7 @@ header button {
     border: none;
     background: none;
     width: fit-content;
+    cursor: pointer;
 }
 
 header nav.mobile {
@@ -74,12 +75,17 @@ header nav button {
     margin-bottom: 4rem;
 }
 
-header.mobile a {
+header nav.mobile a {
     color: var(--dark-blue);
     text-decoration: none;
     font-size: 1.125rem;
     line-height: 1.5rem;
 }
+
+header .desktop {
+    display: none;
+}
+
 
 .primeira-secao {
     margin-bottom: 4rem;
@@ -175,6 +181,11 @@ header.mobile a {
     margin-block: 0.6rem;
 }
 
+.terceira-secao a {
+    text-decoration: none;
+}
+
+
 .terceira-secao p {
     font-size: 0.9375rem;
     line-height: 1.625rem;
@@ -182,6 +193,28 @@ header.mobile a {
 }
 
 @media(min-width: 1100px) {
+    header > button {
+        display: none;
+    }
+
+    header .desktop {
+        display: flex;
+        gap: 2.5rem;
+    }   
+
+    header .desktop a {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        line-height: 1.625rem;
+        text-decoration: none;
+        color: var(--gunmetal);
+    }
+
+    header .desktop a:hover {
+        color: var(--vermillion);
+        transition: 0.7s;
+    }
+
     main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -206,25 +239,24 @@ header.mobile a {
     .primeira-secao h1 {
         font-size: 3.5rem;
     }
+    
+    .primeira-secao button:hover{
+        background-color: var(--dark-blue);
+        cursor: pointer;
+        transition: 0.7s;
+    }
 
     .segunda-secao h2 {
         font-size: 2.5rem;
     }
-
-    header > button {
-        display: none;
-    }
-
-    header .desktop {
+    
+    .terceira-secao {
         display: flex;
-        gap: 2.5rem;
-    }   
-
-    header .desktop a {
-        font-size: 0.9375rem;
-        font-weight: 600;
-        line-height: 1.625rem;
-        text-decoration: none;
-        color: var(--gunmetal);
+        grid-column: 1 / 4;
+    }
+    
+    .terceira-secao h2:hover {
+        color: var(--vermillion);
+        transition: 0.7s;
     }
 }
